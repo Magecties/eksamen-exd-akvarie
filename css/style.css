@@ -139,6 +139,8 @@ body {
 }
 
 /* ------------------- Havfrue2 ------------------- */
+
+
 .havfrue2 {
   position: fixed;
   left: 0;
@@ -146,6 +148,10 @@ body {
   width: 120px;
   height: 180px;
   z-index: 100;
+
+   animation:
+    havfrue-bob 3s ease-in-out infinite,
+    havfrue-disappear 1s ease-out forwards 6s;
 }
 
 .havfrue2 img {
@@ -154,14 +160,6 @@ body {
   object-fit: contain;
 }
 
-/* Havfrue2 fade-out */
-#havfrue2 {
-  animation-name: havfrue-disappear;
-  animation-duration: 1s;
-  animation-delay: 6s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
-}
 
 @keyframes havfrue-disappear {
   from {
@@ -175,13 +173,7 @@ body {
   }
 }
 
-.havfrue2 {
-  position: fixed;
-  left: 0;
-  top: 20px;
-  will-change: transform;
-  animation: havfrue-bob 3s ease-in-out infinite;
-}
+
 
 @keyframes havfrue-bob {
   0% {

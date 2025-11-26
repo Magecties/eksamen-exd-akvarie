@@ -564,7 +564,7 @@ body {
   bottom: 15.4vh;
   width: 150px;
   max-width: 28vw;
-  z-index: 1;
+  z-index: 2;
   left: calc(-1 * var(--off-fish1));
   will-change: transform;
   animation: fishOne 16s linear infinite;
@@ -585,7 +585,7 @@ body {
   width: 150;
   max-width: 28vw;
   right: calc(-1 * var(--off-fish2));
-  z-index: 1;
+  z-index: 2;
   animation: fishTwo 25s linear infinite;
 }
 
@@ -605,7 +605,7 @@ body {
   width: 150;
   max-width: 28vw;
   right: calc(-1 * var(--off-fish3));
-  z-index: 1;
+  z-index: 2;
   animation: fishTree 40s linear infinite;
 }
 
@@ -625,7 +625,7 @@ body {
   width: 150px;
   max-width: 28vw;
   left: calc(-1 * var(--off-fish4));
-  z-index: 1;
+  z-index: 2;
   animation: fishFour 40s linear infinite;
 }
 
@@ -644,7 +644,7 @@ body {
   width: 150px;
   max-width: 28vw;
   left: calc(-1 * var(--off-fish5));
-  z-index: 1;
+  z-index: 2;
   animation: fishFive 15s linear infinite;
 }
 
@@ -663,7 +663,7 @@ body {
   width: 150;
   max-width: 28vw;
   right: calc(-1 * var(--off-fish3));
-  z-index: 1;
+  z-index: 2;
   animation: fishSix 9s linear infinite;
 }
 

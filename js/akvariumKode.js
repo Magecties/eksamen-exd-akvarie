@@ -72,7 +72,7 @@ const fishInfo = [
     habitat: "Koralrev i Laguner ",
   },
   {
-    className: "barnetegningfisketingonthegoatondrengenongod",
+    className: "barneFiskeTegning",
     fishName: gemtfiskenavn,
   },
 ];
@@ -105,7 +105,7 @@ fishInfo.forEach((fish) => {
     // Tilføjer mouseover event listener til hvert element
     elem.addEventListener("mouseover", () => {
       // Opretter HTML-strengen med fiskedetaljer og sikrer at den ikke er den fisk barnet har tegnet
-      if (fish.className != "barnetegningfisketingonthegoatondrengenongod") {
+      if (fish.className != "barneFiskeTegning") {
         const fiskeDetails = `
 
                <strong>${fish.fishName}</strong><br>
@@ -116,7 +116,7 @@ fishInfo.forEach((fish) => {
         showTooltip(fiskeDetails);
       }
       //tjekker om det er den fisk som barnet har tegnet på geden type shit
-      if (fish.className === "barnetegningfisketingonthegoatondrengenongod") {
+      if (fish.className === "barneFiskeTegning") {
         const fiskeDetails = `
 
                <strong>${fish.fishName}</strong><br>

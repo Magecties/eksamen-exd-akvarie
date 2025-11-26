@@ -2,7 +2,7 @@
 
 const bgSound = document.getElementById("bgSound");
 const backgroundSound = new Audio(
-  "sounds/Royalty-Free-MusicUnder-the-sealittle.mp3"
+  "sounds/baggrundLyd.mp3"
 );
 
 setTimeout(() => {

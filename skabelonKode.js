@@ -2,12 +2,12 @@
 
 const bgSound = document.getElementById("bgSound");
 const backgroundSound = new Audio(
-  "sounds/Royalty-Free-MusicUnder-the-sealittle.mp3"
+  "sounds/baggrundLyd.mp3"
 );
 
 const havfrue2Sound = document.getElementById("havfrue2");
 
-const havfrue2lyd = new Audio("sounds/side2lyd.mp3");
+const havfrue2lyd = new Audio("sounds/skabelonIntroLyd.mp3");
 
 
 //funktion der først bliver kaldt når man klikker som så spiller havfrue

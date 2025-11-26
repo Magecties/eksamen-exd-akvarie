@@ -2,12 +2,12 @@
 
 const bgSound = document.getElementById("bgSound");
 const backgroundSound = new Audio(
-  "sounds/Royalty-Free-MusicUnder-the-sealittle.mp3"
+  "sounds/baggrundLyd.mp3"
 );
 
 const havfrue1Sound = document.getElementById("havfrue1");
 
-const havfrue1lyd = new Audio("sounds/forsidelyd.mp3");
+const havfrue1lyd = new Audio("sounds/forsideLyd.mp3");
 
 
 

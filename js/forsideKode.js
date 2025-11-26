@@ -2,86 +2,85 @@
 
 const bgSound = document.getElementById("bgSound");
 const backgroundSound = new Audio(
-  "sounds/baggrundLyd.mp3"
+  "lyde/baggrundLyd.mp3"
 );
+
+const havfrue1Sound = document.getElementById("havfrue1");
+
+const havfrue1lyd = new Audio("lyde/forsideLyd.mp3");
+
+
+
+//funktion der først bliver kaldt når man klikker som så spiller musik og havfrue
+function enableSound() {
+
+setTimeout(() => {
+  havfrue1lyd.play();
+}, 100);
+
+
 
 setTimeout(() => {
   backgroundSound.play();
-}, 10);
+}, 5800);
 
 backgroundSound.loop = true;
 
-//kode til akvariumside
-//fiske navn localstorage
-const gemtfiskenavn = localStorage.getItem("savedFishName");
-console.log(gemtfiskenavn);
+  document.removeEventListener('click', enableSound);
+}
 
-// tegning localstorage
-document.addEventListener("DOMContentLoaded", () => {
-  const imgElement = document.getElementById("fishDrawing");
-  const savedDrawing = localStorage.getItem("savedDrawingOnly");
+document.addEventListener('click', enableSound);
 
-  if (savedDrawing) {
-    imgElement.src = savedDrawing;
-  } else {
-    imgElement.alt = "hvor er din fisk? ;(";
-  }
-});
-
+// --------------------------forside--------------------------------------------------
 const fishInfo = [
   {
-    className: "fishOne",
+    className: "fish1",
     fishName: "Oscar",
     fishType: "Blå chromis",
     food: "Zooplankton, Alger",
     habitat: "Koralrev, Huler og Revstrukturer",
   },
   {
-    className: "fishTwo",
+    className: "fish2",
     fishName: "Dory",
     fishType: "Kirurgfisk",
     food: "Alger",
     habitat: "Koraller",
   },
   {
-    className: "fishTree",
+    className: "fish3",
     fishName: "Nemo",
     fishType: "Klovnefisk",
     food: "Smådyr og Alger",
     habitat: "Koraller",
   },
   {
-    className: "fishFour",
+    className: "fish4",
     fishName: "Carl",
     fishType: "Pindsvinefisk",
     food: "Bløddyr og krebsdyr",
     habitat: "Rev og Koraller",
   },
   {
-    className: "fishFive",
+    className: "fish5",
     fishName: "Emma",
     fishType: "Pudsefisk",
     food: "Parasitter og rester fra andre fisk",
     habitat: "Koralrev",
   },
   {
-    className: "fishSix",
+    className: "fish6",
     fishName: "Robin",
     fishType: "Rævefjæs",
     food: "Alger",
     habitat: "Koralrev i Laguner ",
   },
-  {
-    className: "barnetegningfisketingonthegoatondrengenongod",
-    fishName: gemtfiskenavn,
-  },
 ];
 
-//tooltip kode
 // finder tooltip id og gemmer det i en variabel
 const tooltip = document.getElementById("tooltip");
 
-// Funktion der viser tooltip med fiskeoplysninger
+// Funktion der viser tooltip med biloplysninger
 // Parameter: html = den tekst indeholdende html-tags som vi vil vise i tooltip'en
 function showTooltip(html) {
   // Tjekker om tooltip-elementet eksisterer i DOM'en
@@ -100,41 +99,20 @@ function showTooltip(html) {
 }
 
 fishInfo.forEach((fish) => {
-  // Finder alle HTML-elementer med den aktuelle fisk className
+  // Finder alle HTML-elementer med den aktuelle bils className
   document.querySelectorAll("." + fish.className).forEach((elem) => {
     // Tilføjer mouseover event listener til hvert element
     elem.addEventListener("mouseover", () => {
-      // Opretter HTML-strengen med fiskedetaljer og sikrer at den ikke er den fisk barnet har tegnet
-      if (fish.className != "barnetegningfisketingonthegoatondrengenongod") {
-        const fiskeDetails = `
+      // Opretter HTML-strengen med bilens detaljer
+      const fiskeDetails = `
 
                <strong>${fish.fishName}</strong><br>
                Art: ${fish.fishType}<br>
                Jeg spiser: ${fish.food}<br>
                Jeg bor i: ${fish.habitat}
                `;
-        showTooltip(fiskeDetails);
-      }
-      //tjekker om det er den fisk som barnet har tegnet på geden type shit
-      if (fish.className === "barnetegningfisketingonthegoatondrengenongod") {
-        const fiskeDetails = `
-
-               <strong>${fish.fishName}</strong><br>
-                `;
-        showTooltip(fiskeDetails);
-      }
       // Kalder showTooltip funktionen med bilens detaljer
       showTooltip(fiskeDetails);
     });
   });
 });
-
-/*
-//tilbage til mainsiden
-const tilbagebtn = document.getElementById('tilbagemain');
-
-tilbagebtn.addEventListener('click', () => {
-window.location.href = 'index.html';
-
-})
-*/

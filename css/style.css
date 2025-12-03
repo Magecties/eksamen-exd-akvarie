@@ -777,6 +777,7 @@ body {
   color: white;
   text-shadow: 0 0 4px black;
   pointer-events: none;
+  z-index: 3;
 }
 
 
@@ -796,4 +797,89 @@ body {
   transform: translateY(-50%);
   z-index: 1;
   animation: fishFive 15s linear infinite;
+}
+
+
+/* ACCESSORY */
+.accessory-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 12px 0;
+}
+
+.accessoryTemplate {
+  aspect-ratio: 4 / 3;
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  border: 3px solid #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.accessoryTemplate:hover {
+  transform: scale(1.05);
+  border-color: #ffd166;
+}
+
+.accessoryTemplate.selected {
+  transform: scale(1.08);
+  border-color: #ffb703;
+}
+
+
+#accessoryStack {
+  position: relative;
+  width: 300px;     /* adjust if needed */
+  margin: 0 auto;
+}
+
+#accessoryStack #fishPreview {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+#accessoryStack #accessoryPreview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;      
+  z-index: 2;
+  pointer-events: none;
+}
+
+#nameStack {
+  position: relative;
+  width: 300px;     /* same width as accessory modal */
+  margin: 0 auto;
+}
+
+#fishPreview2 {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+#accessoryPreview2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* scaler accesory ned på fisk */
+#fishAccessory{
+width: 50%;         
+  position: absolute;      
+  left: 25%;
+  bottom: 30%;
+  pointer-events: none;
+  z-index: 2;
 }

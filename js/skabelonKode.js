@@ -26,8 +26,9 @@ document.addEventListener('click', enableSound);
 
 backgroundSound.loop = true;
 
-
-// -----------------------------index.html----------------------------------------
+//henter accessories 
+const accessoryModal = document.getElementById("accessoryModal");
+const accessoryPreview = document.getElementById("accessoryPreview");
 
 // henter id fra canvas og toolbar er lines og clear knap
 
@@ -171,7 +172,6 @@ const draw = (e) => {
   if (!isPainting) {
     return;
   }
-  console.log(e);
 
   ctx.lineWidth = lineWidth;
   ctx.lineCap = "round";
@@ -201,7 +201,7 @@ saveButton.addEventListener("click", () => {
 
   // Vis i modal
   imgPreview.src = drawingData;
-  modal.style.display = "flex";
+  accessoryModal.style.display = "flex";
 });
 
 // Luk modal ved klik på X
@@ -237,3 +237,45 @@ if (_havfrue2) {
     _havfrue2.style.display = "none";
   });
 }
+
+
+//accessories eventlisteners
+
+let chosenAccessory = null;
+
+document.getElementById("brilleBtn").addEventListener("click", () => {
+  chosenAccessory = "fiskeBrille.png";
+  accessoryPreview.src = "img/fiskeBrille.png";
+});
+
+document.getElementById("hatBtn").addEventListener("click", () => {
+  chosenAccessory = "fiskeHat.png";
+  accessoryPreview.src = "img/fiskeHat.png";
+});
+
+document.getElementById("benBtn").addEventListener("click", () => {
+  chosenAccessory = "fiskeBen.png";
+  accessoryPreview.src = "img/fiskeBen.png";
+});
+
+
+
+document.getElementById("accessoryDone").addEventListener("click", function () {
+
+  // gemmer accessory
+  localStorage.setItem("savedAccessory", chosenAccessory);
+
+  // skuler accessory modal
+  accessoryModal.style.display = "none";
+
+  // viser navne modal
+  modal.style.display = "flex";
+
+   // Load henter tegnet fisk
+  const drawing = localStorage.getItem("savedDrawingOnly");
+  document.getElementById("fishPreview2").src = drawing;
+
+  // henter accessory som var valgt
+  const acc = localStorage.getItem("savedAccessory");
+  document.getElementById("accessoryPreview2").src = acc ? "img/" + acc : "";
+});

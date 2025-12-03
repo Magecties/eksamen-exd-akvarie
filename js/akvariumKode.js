@@ -14,6 +14,10 @@ backgroundSound.loop = true;
 
    const gemtfiskenavn = localStorage.getItem("savedFishName");
 
+   //accesories localstorage
+   const savedAccessory = localStorage.getItem("savedAccessory");
+   const accessoryImg = document.getElementById("fishAccessory");
+
 // tegning localstorage
 document.addEventListener("DOMContentLoaded", () => {
   const imgElement = document.getElementById("fishDrawing");
@@ -36,6 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
     nameLabel.innerHTML = gemtfiskenavn;
     console.log("Gemt fisk navn fundet:", gemtfiskenavn);
   }
+
+
+   if (savedAccessory) {
+    accessoryImg.src = "img/" + savedAccessory;
+    accessoryImg.style.display = "block";
+} else {
+    accessoryImg.style.display = "none";
+}
   
 });
 

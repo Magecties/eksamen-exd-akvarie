@@ -669,16 +669,7 @@ body {
   }
 }
 
-#fishDrawing {
-  position: absolute;
-  width: 350px;
-  max-width: 28vw;
-  left: calc(-1 * var(--off-fish5));
-  top: 38%;
-  transform: translateY(-50%);
-  z-index: 1;
-  animation: fishFive 15s linear infinite;
-}
+
 
 /* ---------------- MODAL ---------------- */
 .modal {
@@ -779,11 +770,30 @@ body {
 
 #fishNameLabel {
   position: absolute;
-  top: -25px;     /* put the name above the fish */
-  width: 150px;   /* match fish width */
+  top: -25px;
+  width: 350px;  
   text-align: center;
   font-weight: bold;
   color: white;
   text-shadow: 0 0 4px black;
-  pointer-events: none; /* so it doesn't block mouse events */
+  pointer-events: none;
+}
+
+
+
+#fishDrawing {
+  position: absolute;
+  width: 350px;
+  left: 0;  
+  top: 0;
+}
+
+#childFishContainer {
+  position: absolute;
+  width: 350px;
+  left: calc(-1 * var(--off-fish5));
+  top: 38%;
+  transform: translateY(-50%);
+  z-index: 1;
+  animation: fishFive 15s linear infinite;
 }

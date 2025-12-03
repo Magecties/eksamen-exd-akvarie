@@ -11,9 +11,8 @@ setTimeout(() => {
 
 backgroundSound.loop = true;
 
-//gemte fisk navn localstorage
-  const gemtfiskenavn = localStorage.getItem("savedFishName");
-  
+
+   const gemtfiskenavn = localStorage.getItem("savedFishName");
 
 // tegning localstorage
 document.addEventListener("DOMContentLoaded", () => {
@@ -29,7 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
     imgElement.alt = "hvor er din fisk? ;(";
   }
 
+//fiskenavn localstorage og fetch
   const nameLabel = document.getElementById("fishNameLabel");
+ 
 
   if (gemtfiskenavn) {
     nameLabel.innerHTML = gemtfiskenavn;

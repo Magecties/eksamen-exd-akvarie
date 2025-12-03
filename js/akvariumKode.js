@@ -11,21 +11,31 @@ setTimeout(() => {
 
 backgroundSound.loop = true;
 
-//kode til akvariumside
-//fiske navn localstorage
-const gemtfiskenavn = localStorage.getItem("savedFishName");
-console.log(gemtfiskenavn);
+//gemte fisk navn localstorage
+  const gemtfiskenavn = localStorage.getItem("savedFishName");
+  
 
 // tegning localstorage
 document.addEventListener("DOMContentLoaded", () => {
   const imgElement = document.getElementById("fishDrawing");
   const savedDrawing = localStorage.getItem("savedDrawingOnly");
 
+  
+  
+
   if (savedDrawing) {
     imgElement.src = savedDrawing;
   } else {
     imgElement.alt = "hvor er din fisk? ;(";
   }
+
+  const nameLabel = document.getElementById("fishNameLabel");
+
+  if (gemtfiskenavn) {
+    nameLabel.innerHTML = gemtfiskenavn;
+    console.log("Gemt fisk navn fundet:", gemtfiskenavn);
+  }
+  
 });
 
 const fishInfo = [
@@ -115,26 +125,6 @@ fishInfo.forEach((fish) => {
                `;
         showTooltip(fiskeDetails);
       }
-      //tjekker om det er den fisk som barnet har tegnet på geden type shit
-      if (fish.className === "barneFiskeTegning") {
-        const fiskeDetails = `
-
-               <strong>${fish.fishName}</strong><br>
-                `;
-        showTooltip(fiskeDetails);
-      }
-      // Kalder showTooltip funktionen med bilens detaljer
-      showTooltip(fiskeDetails);
     });
   });
 });
-
-/*
-//tilbage til mainsiden
-const tilbagebtn = document.getElementById('tilbagemain');
-
-tilbagebtn.addEventListener('click', () => {
-window.location.href = 'index.html';
-
-})
-*/

@@ -775,3 +775,15 @@ body {
 #saveFishName:active {
   transform: scale(0.97);
 }
+
+
+#fishNameLabel {
+  position: absolute;
+  top: -25px;     /* put the name above the fish */
+  width: 150px;   /* match fish width */
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 4px black;
+  pointer-events: none; /* so it doesn't block mouse events */
+}

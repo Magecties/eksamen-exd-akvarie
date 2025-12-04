@@ -230,17 +230,24 @@ saveFishNameButton.addEventListener("click", () => {
 
 // Havfrue2
 // Fjern havfrue2 fra layout når animationen er færdig (sikrer ingen klik eller pladsoptag)
-const _havfrue2 = document.getElementById("havfrue2");
-if (_havfrue2) {
-  _havfrue2.addEventListener("animationend", () => {
+const havfrue2 = document.getElementById("havfrue2");
+
+if (havfrue2) {
+  havfrue2.addEventListener("animationend", () => {
     // Skjul helt efter animationen
-    _havfrue2.style.display = "none";
+    havfrue2.style.display = "none";
   });
 }
 
+const havfrueFjern = document.querySelector(".havfrue2");
+
+// fjerner havfrue2 når at folk de klikker så man ikke skal sidde og vente
+document.addEventListener("click", () => {
+  havfrueFjern.style.display = "none";
+});
+
 
 //accessories eventlisteners
-
 let chosenAccessory = null;
 
 document.getElementById("brilleBtn").addEventListener("click", () => {

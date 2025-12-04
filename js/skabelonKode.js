@@ -222,6 +222,11 @@ modal2.addEventListener("click", (e) => {
   if (e.target === modal2) modal2.style.display = "none";
 });
 
+// Luk modal ved klik udenfor boksen
+accessoryModal.addEventListener("click", (e) => {
+  if (e.target === accessoryModal) accessoryModal.style.display = "none";
+});
+
 // gemfiskenanvn
 saveFishNameButton.addEventListener("click", () => {
   const fishName = fishNameInput.value;

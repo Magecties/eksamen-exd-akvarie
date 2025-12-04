@@ -185,8 +185,9 @@ canvas.addEventListener("mousemove", draw);
 
 // alt med localstorage kommer her, har også addet modal
 const saveButton = document.getElementById("saveFish");
-const modal = document.getElementById("fishModal");
-const closeModal = document.getElementById("closeModal");
+const modal2 = document.getElementById("fishModal");
+const closeModal1 = document.getElementById("closeModal");
+const closeModal2 = document.getElementById("closeModal2");
 const imgPreview = document.getElementById("fishPreview");
 const fishNameInput = document.getElementById("fishName");
 const saveFishNameButton = document.getElementById("saveFishName");
@@ -204,14 +205,21 @@ saveButton.addEventListener("click", () => {
   accessoryModal.style.display = "flex";
 });
 
+
 // Luk modal ved klik på X
-closeModal.addEventListener("click", () => {
-  modal.style.display = "none";
+closeModal1.addEventListener("click", () => {
+  accessoryModal.style.display = "none";
 });
 
+// Luk modal ved klik på X
+closeModal2.addEventListener("click", () => {
+  modal2.style.display = "none";
+});
+
+
 // Luk modal ved klik udenfor boksen
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) modal.style.display = "none";
+modal2.addEventListener("click", (e) => {
+  if (e.target === modal2) modal2.style.display = "none";
 });
 
 // gemfiskenanvn
@@ -279,7 +287,7 @@ document.getElementById("accessoryDone").addEventListener("click", function () {
   accessoryModal.style.display = "none";
 
   // viser navne modal
-  modal.style.display = "flex";
+  modal2.style.display = "flex";
 
    // Load henter tegnet fisk
   const drawing = localStorage.getItem("savedDrawingOnly");

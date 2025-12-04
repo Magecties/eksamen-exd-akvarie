@@ -246,16 +246,19 @@ let chosenAccessory = null;
 document.getElementById("brilleBtn").addEventListener("click", () => {
   chosenAccessory = "fiskeBrille.png";
   accessoryPreview.src = "img/fiskeBrille.png";
+  accessoryPreview.style.display = "block";
 });
 
 document.getElementById("hatBtn").addEventListener("click", () => {
   chosenAccessory = "fiskeHat.png";
   accessoryPreview.src = "img/fiskeHat.png";
+  accessoryPreview.style.display = "block";
 });
 
 document.getElementById("benBtn").addEventListener("click", () => {
   chosenAccessory = "fiskeBen.png";
   accessoryPreview.src = "img/fiskeBen.png";
+  accessoryPreview.style.display = "block";
 });
 
 

@@ -834,7 +834,7 @@ body {
 
 #accessoryStack {
   position: relative;
-  width: 300px;     /* adjust if needed */
+  width: 300px;     
   margin: 0 auto;
 }
 
@@ -851,7 +851,9 @@ body {
   width: 50%;      
   z-index: 2;
   pointer-events: none;
+  display: none;
 }
+
 
 #nameStack {
   position: relative;

@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
  
 
   if (gemtfiskenavn) {
-    nameLabel.innerHTML = gemtfiskenavn;
+    nameLabel.textContent = gemtfiskenavn;
     console.log("Gemt fisk navn fundet:", gemtfiskenavn);
   }
 
